@@ -2,7 +2,7 @@ program presicao
     implicit none
     real*8 ad
     real as
-    integer j
+    integer 2
     ad = 2.0d0
     as = 2.0
     do j=1,52
