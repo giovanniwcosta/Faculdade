@@ -7,18 +7,27 @@
 !real com precião simples e dupla.
 program presicao
     implicit none
-    real*8 ad,vd
+    real*8 ad,vd,r,a,pi
     real as,vs
-    integer j
-    ad = 2.0d0
-    as = 2.0
-    do j=1,60
-        ad = ad*2.0d0
-        as = as*2.0
-        vd = 1.0d0 + 2.0d0/(ad)
-        vs = 1.0 + 2.0/(as)
-        if(vs == 1.0)vs = 0
-        if(vd == 1.0d0) stop
-        write(*,*)j,vd,vs
+
+    read(*,*)r
+    ad = 1.0d0
+    as = 1.0
+    write(*,*)"Precisão Simples"
+    do while(1>0)
+        as = as/2.0
+        vs = 1.0 + as
+        write(*,*)as,vs
+        if(vs == 1.0)goto 1
     enddo
+    1 write(*,*)"Precisão Dupla"
+    do while(1>0)
+        ad = ad/2.0d0
+        vd = 1.0d0 + ad
+        write(*,*)ad,vd
+        if(vd == 1.0d0)goto 2
+    enddo
+    2 pi = 4*atan(1.0_8)
+    a = pi*r**2.0d0
+    write(*,*)"Valor da Area:",a
 end program
