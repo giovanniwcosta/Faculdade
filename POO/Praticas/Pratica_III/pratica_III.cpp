@@ -86,7 +86,7 @@ Pecas load_peca(Local nome){
 	return pecas;
 }
 
-/*Cria um vetor de produtos com a partir dos vetores de peças e materiais*/
+/*Cria um vetor de produtos a partir dos vetores de peças e materiais*/
 Produtos load_produto(Materiais mat, Pecas pecas){
 
 	Produtos produtos;
@@ -104,7 +104,7 @@ Produtos load_produto(Materiais mat, Pecas pecas){
 	return produtos;
 }
 
-/*Procura um materia em um vetor pelo Identificador*/
+/*Procura uma materia em um vetor pelo Identificador*/
 material find_material(Id id, Materiais materiais){
 
 	material materia;
@@ -126,7 +126,7 @@ void save(Produtos produtos, Local nome){
 	}
 }
 
-/*Três forma de organizar os produtos*/
+/*Três formas de organizar os produtos*/
 void sort_preco(Produtos &produtos){
 	std::sort(begin(produtos), end(produtos), [] (produto const &x, produto const &y) { return x.preco < y.preco; });
 }
